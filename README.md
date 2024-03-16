@@ -19,17 +19,17 @@ tool targeting x64 Windows 10/11 systems, written in Go.
 | ----------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
 | ![](assets/home.png) ![](assets/connection.png) | ![](assets/data.png) ![](assets/cookie.png) | ![](assets/build.png) ![](assets/builds.png) |
 
-## Features
-- 🐳 Easy setup with Docker
-- 🖱️ Web interface over TOR
-- 👾 Compile time obfuscated builds for unique signatures  
-- 🛡️ Anti-VM (Anti-Sandbox) and Anti-Debug features for protection
-- 🍪 Steal browser information (cookies, history data, passwords and credit cards) from popular Chromium-based browsers
-- 💬 Steal discord account information from popular Chromium-based browsers and the Discord app
-- 📂 Steal files from the disk
-- 🚫 Display fake error message to trick the user
-- 🤏 Fairly small build sizes (~4MB)
-- 🚩 Multi-language support (🇬🇧 English and 🇹🇷 Turkish)
+## 🗃️ Features
+- Easy setup with Docker
+- Web interface over TOR
+- Compile time obfuscated builds for unique signatures  
+- Anti-VM (Anti-Sandbox) and Anti-Debug features for protection
+- Steal browser information (cookies, history data, passwords and credit cards) from popular Chromium-based browsers
+- Steal discord account information from popular Chromium-based browsers and the Discord app
+- Steal files from the disk
+- Display fake error message to trick the user
+- Fairly small build sizes (~4MB)
+- Multi-language support (🇬🇧 English and 🇹🇷 Turkish)
 
 ## 🚀 Setup 
 For a minimal setup, the server requirements are:
