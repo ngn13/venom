@@ -27,9 +27,9 @@ tool targeting x64 Windows 10/11 systems.
   * 🇹🇷 Turkish 
 
 ### Screenshots
-| **Page:** home       | **Page:** data                              | **Page:** build       |
-| -------------------- | ------------------------------------------- | --------------------- |
-| ![](assets/home.png) | ![](assets/data.png) ![](assets/cookie.png) | ![](assets/build.png) |
+| **Page:** home                                  | **Page:** data                              | **Page:** build                              |
+| ----------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
+| ![](assets/home.png) ![](assets/connection.png) | ![](assets/data.png) ![](assets/cookie.png) | ![](assets/build.png) ![](assets/builds.png) |
 
 ### Setup 
 For a minimal setup, the server requirements are:
