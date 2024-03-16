@@ -1,6 +1,6 @@
 {
-  "MAP$config.token$": "OxKxwPffW4JPZfe",
-  "MAP$config.url$": "http://192.168.122.1:8082",
+  "MAP$config.token$": "000000000000000",
+  "MAP$config.url$": "http://127.0.0.1",
   "MAP$config.quiet$": false,
   "MAP$config.modules$": [
     "card",
