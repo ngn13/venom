@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="assets/venom.png">
+<img align="left" width="100" height="150" src="assets/venom.png">
 
 # Venom | Free and open source info-stealer
 Venom is a free (as in freedom) and open source information stealer 
