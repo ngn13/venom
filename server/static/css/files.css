@@ -1,0 +1,116 @@
+main {
+  padding: 20px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  width: 100%;
+  width: 100%;
+}
+
+.disk {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.disk .meter {
+  height: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  border: solid 1px var(--light);
+}
+
+.disk .inside {
+  height: 25px;
+  border-radius: var(--radius);
+  background: var(--gray);
+}
+
+.disk-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  color: var(--white);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file {
+  border: solid 1px var(--gray);
+  border-radius: var(--radius);
+  background: var(--dark);
+  color: var(--white);
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file p {
+  color: var(--light);
+  font-size: 15px;
+}
+
+.file p strong {
+  color: var(--white);
+  font-weight: 900;
+}
+
+.file h1 {
+  font-size: 20px;
+}
+
+.file table tr td:first-child {
+  width: 10%;
+} 
+
+.file .options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.count {
+  margin-bottom: 15px;
+}
+
+.error-box,
+.success-box {
+  margin-bottom: 15px;
+}
+
+.badge button, .badge i, .badge {
+  cursor: default;
+  color: var(--white);
+}
+
+.badge button {
+  font-weight: 400;
+}
+
+.badge:hover {
+  background: var(--red);
+}

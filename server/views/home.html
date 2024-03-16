@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.home") }}</title>
+    <link href="/css/home.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main>
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if success %}
+        {% include "parts/success.html" %}
+      {% endif %}
+      <div class="cards">
+        <div class="card">
+          <p>{{ get("home.count") }}</p>
+          <h1>{{ counts }}</h1>
+        </div>
+        <div class="card">
+          <p>{{ get("home.data") }}</p>
+          <h1>{{ h(data) }}</h1>
+        </div>
+      </div>
+      {% if agents|length == 0 %}
+      <div class="empty">
+        <h1>{{ get("home.empty.title") }}</h1>
+        <p>{{ get("home.empty.msg") }}</p>
+      </div>
+      {% else %}
+      <table class="dark-table">
+        <tr>
+          <th>🏳️ {{get("home.table.country")}}</th>
+          <th>📌 {{get("home.table.publicip")}}</th>
+          <th>🪪 {{get("home.table.id")}}</th>
+        </tr>
+        {% for a in agents %} 
+          <tr>
+            {% if a.Sysinfo.Country == "Unknown" %}
+              <td>Unknown</td>
+            {% else %}
+              <td><div class="flag-small flag-small-{{ a.Sysinfo.Country }}"></div></td>
+            {% endif %}
+            <td>{{ a.Sysinfo.PublicIP }}</td>
+            <td><a href="/con/{{a.ID}}">{{ a.ID }}</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+      {% endif %} 
+    </main>
+  </body>
+</html>

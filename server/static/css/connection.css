@@ -1,0 +1,31 @@
+main {
+  padding: 20px;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  border: solid 1px var(--gray);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  color: var(--white);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,0 +1,113 @@
+main {
+  padding: 20px;
+}
+
+.modules {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.module {
+  color: var(--white);
+  border: solid 1px var(--gray);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 15px;
+  border-radius: var(--radius);
+  background: var(--dark);
+  box-shadow: var(--box-shadow);
+  transition: .4s;
+}
+
+.module:hover {
+  box-shadow: var(--inner-shadow);
+  text-shadow: var(--text-shadow);
+  color: var(--red-light);
+  border: solid 1px var(--red-light);
+}
+
+.module i {
+  font-size: 40px;
+}
+
+.module div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.module div i {
+  font-size: 30px;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+  gap: 10px;
+}
+
+.search-bar form {
+  flex-grow: 7;
+}
+
+.search-bar a {
+  flex-grow: 1;
+  background: var(--dark);
+  color: var(--white);
+  border: solid 1px var(--gray);
+}
+
+.search-bar a i {
+  font-size: 15px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+  width: 100%;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result {
+  background: var(--dark);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  border: solid 1px var(--gray);
+  color: var(--white);
+  padding: 20px;
+  transition: .2s;
+}
+
+.result table {
+  width: 100%;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+.result table tr td:first-child {
+  width: 10%;
+} 
+
+.result strong {
+  font-weight: 900;
+}
+
+.count {
+  margin-bottom: 15px;
+}

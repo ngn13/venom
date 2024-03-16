@@ -1,0 +1,117 @@
+body {
+  padding: 5%;
+}
+
+form {
+  background: var(--dark);
+  border-radius: var(--radius);
+  border: solid 1px var(--gray);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+form h1 {
+  font-weight: 900;
+  color: var(--white);
+}
+
+form h3 {
+  font-size: 15px;
+  text-align: left;
+  color: var(--light);
+  margin-bottom: 20px;
+}
+
+form label div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+}
+
+form label div p {
+  color: var(--white);
+  font-size: 15px;
+}
+
+form label div i {
+  color: var(--light);
+  font-size: 20px;
+}
+
+.dark-input {
+  background-color: var(--black);
+}
+
+form button {
+  margin-top: 20px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.general label{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+button {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .4s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: var(--black);
+  padding: 10px;
+  border: solid 1px var(--light);
+  border-radius: var(--radius);
+}
+
+button i {
+  font-weight: 900;
+  font-size: 25px;
+}
+
+button p{
+  color: inherit;
+  background: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--red-light);
+  border: solid 1px var(--red-light);
+}
+
+.dark-table th {
+  text-align: left;
+}
+
+.dark-table td i {
+  font-size: 16px;
+  font-weight: 900;
+}

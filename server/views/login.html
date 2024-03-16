@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.login") }}</title>
+    <link href="/css/login.css" rel="stylesheet">
+  </head>
+  <body>
+    <form action="/login" method="POST">
+      <h1>{{ get("login.msg") }}</h1>
+      <input class="dark-input"
+             type="password" 
+             placeholder="{{ get('login.input') }}" 
+             name="pwd" required autofocus>
+      <button type="submit" class="dark-button">
+        <i class='bx bxs-lock-open-alt' ></i> 
+        <p>{{ get("login.submit") }}</p>
+      </button>
+      {% if error %}
+        <p class="error">{{ error }}</p>
+      {% endif %}
+    </form>
+  </body>
+</html>

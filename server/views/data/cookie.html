@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.data") }}</title>
+    <link href="/css/data.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main class="user">
+      {% include "parts/data_bar.html" %}
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if results|length == 0 %}
+      <div class="empty">
+        <h1>{{ get('data.empty.title') }}</h1>
+        <p>{{ get('data.empty.msg') }}</p>
+      </div>
+      {% else %}
+        {% include "parts/data_count.html" %}
+        <div class="results">
+          {% for r in results %}
+            <div class="result">
+              <h1>[{{ r.Domain }}{{ r.Path }}] {{ r.Name }}</h1>
+              <table class="dark-table">
+                <tr>
+                  <td><strong>🔑 {{ get('data.key.value') }}</strong></td> 
+                  <td><p>{{ r.Value }}</p></td>
+                </tr>
+                <tr>
+                  <td><strong>📅 {{ get('data.key.expires') }}</strong></td> 
+                  <td><p>{{ wt(r.Expires) }}</p></td>
+                </tr>
+                <tr>
+                  <td><strong>📫 {{ get('data.key.from') }}</strong></td> 
+                  <td><p>{{ r.From }}</p></td>
+                </tr>
+              </table>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<div class="count">
+{% if current-1 > 0 %}
+  <a class="link" href="/data/{{module}}?term={{term}}&page={{current-1}}">
+    <i class='bx bxs-chevrons-left' ></i>
+    <button>{{ get("data.prev") }}</button>
+  </a>
+{% else %}
+  <p class="link invalid">
+    <i class='bx bxs-chevrons-left' ></i>
+    <button>{{ get("data.prev") }}</button>
+  </p>
+{% endif %}
+<strong>{{current}}/{{pages}}</strong>
+{% if current+1 <= pages %}
+  <a class="link" href="/data/{{module}}?term={{term}}&page={{current+1}}">
+    <button>{{ get("data.next") }}</button>
+    <i class='bx bxs-chevrons-right' ></i>
+  </a>
+{% else %}
+  <p class="link invalid">
+    <button>{{ get("data.next") }}</button>
+    <i class='bx bxs-chevrons-right' ></i>
+  </p>
+{% endif %}
+</div>

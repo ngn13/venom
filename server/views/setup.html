@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.setup") }}</title>
+    <link href="/css/setup.css" rel="stylesheet">
+  </head>
+  <body>
+    <form x-data="" action="/complete" method="POST" class="dark-box">
+      <div class="header">
+        <img src="/venom.png">
+        <div>
+          <h1>{{ get("setup.thanks") }}</h1>
+          <h3>{{ get("setup.desc") }}</h3>
+          <div class="badges">
+            <a href="https://github.com/ngn13/venom/tree/main/docs">
+              <i class='bx bxs-book-open'></i>
+              <button>{{ get("setup.link.docs") }}</button>
+            </a>
+            <a href="https://github.com/ngn13/venom">
+              <i class='bx bxl-github'></i> 
+              <button>{{ get("setup.link.github") }}</button>
+            </a>
+            <a href="https://ngn.tf/donate">
+              <i class='bx bxs-donate-heart' ></i>
+              <button>{{ get("setup.link.donate") }}</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="inputs">
+        <input class="dark-input"
+               name="pwd" 
+               placeholder="{{ get('setup.pwd') }}" 
+               type="password" required autofocus>
+        <select name="lang" @change="lang" required>
+          <option value="{{selected.Code}}">{{selected.Name}}</option>
+          {% for l in langs %}
+            {% if l.Code != selected.Code %}
+          <option value="{{l.Code}}">{{l.Name}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+      <button class="submit dark-button" type="submit">
+        <i class='bx bxs-archive-in' ></i>
+        {{ get("setup.submit") }}
+      </button>
+    </form>
+  </body>
+  <script src="/js/setup.js"></script>
+</html>

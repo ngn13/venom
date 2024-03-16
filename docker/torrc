@@ -1,0 +1,6 @@
+DataDirectory /var/lib/tor
+RunAsDaemon 1
+User tor
+
+HiddenServiceDir /var/lib/tor/venom/
+HiddenServicePort 80 127.0.0.1:8082

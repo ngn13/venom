@@ -1,0 +1,534 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+:root {
+  --black:  #000;
+  --dark:   #111;
+  
+  --gray:   #444;
+  --light:  #afafaf;
+  --white:  #fff;
+
+  --red:          #551111;
+  --red-light:    #ff5f5f;
+  --green:        #115511;
+  --green-light:  #5fff5f;
+
+  --box-shadow:   rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --inner-shadow: rgba(10, 10, 10, 0.8) 0px 30px 60px -12px inset, rgba(10, 10, 10, 0.8) 0px 18px 36px -18px inset;
+  --text-shadow:  0px 4px 4px #282828; 
+
+  --radius:       5px;
+  --transition:   .3s;
+}
+
+::selection {
+  background: rgba(150, 150, 150, 0.2);
+  text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: var(--red-light);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--red-light);
+}
+
+@keyframes bgmove {
+  0%{background-position:100% 5%}
+  100%{background-position:0% 96%}
+}
+
+@keyframes borderred {
+  0%{border-color: var(--light)}
+  50%{border-color: var(--red-light)}
+  100%{border-color: var(--light)}
+}
+
+body {
+  font-family: monospace;
+  background: var(--black);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: solid 1px var(--light);
+  background: var(--black);
+  padding: 12px 15px 12px 15px;
+
+  animation-name: borderred;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+nav .nav-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav .nav-logo h1{
+  font-size: 35px;
+  cursor: pointer;
+
+  background: linear-gradient(30deg, 
+      var(--white), var(--white), var(--white), var(--white), 
+      var(--red-light), 
+      var(--white), var(--white), var(--white), var(--white));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-decoration: none;
+  background-size: 400%;
+
+  animation-name: bgmove;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+nav .nav-logo p{
+  font-size: 30px;
+  color: var(--white);
+  font-weight: 100;
+}
+
+nav .nav-links {
+  display: block;
+  text-align: right;
+}
+
+nav .nav-links a{
+  color: var(--light);
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: 5px;
+  font-size: 17px;
+  transition: .3s;
+  border: none;
+}
+
+.nav-links a:hover {
+  color: var(--red-light);
+}
+
+.empty {
+  opacity: 50%;
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--light);
+}
+
+.empty h1 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.empty p {
+  font-size: 20px;
+}
+
+.dark-table {
+  border-spacing: 0;
+}
+
+.dark-table tr:first-child th:last-child {
+  border-top-right-radius: var(--radius);
+}
+
+.dark-table tr:first-child th:first-child {
+  border-top-left-radius: var(--radius);
+}
+
+.dark-table tr:first-child td:last-child {
+  border-top-right-radius: var(--radius);
+}
+
+.dark-table tr:first-child td:first-child {
+  border-top-left-radius: var(--radius);
+}
+    
+.dark-table tr:last-child td:last-child{
+  border-bottom-right-radius: var(--radius);
+}
+
+.dark-table tr:last-child td:first-child{
+  border-bottom-left-radius: var(--radius);
+}
+
+.dark-table td {
+  background: var(--black);
+  border: solid 1px var(--gray);
+  padding: 10px;
+  font-size: 15px;
+  color: var(--white);
+}
+
+.dark-table th {
+  background: var(--black);
+  font-weight: 900;
+  padding: 10px;
+  font-size: 17px;
+  border: solid 1px var(--red-light);
+  color: var(--white);
+}
+
+.error-box {
+  background: var(--red);
+  border: solid 1px var(--red-light);
+  border-radius: var(--radius);
+  color: var(--red-light);
+  padding: 15px;
+  gap: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.error-box p {
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.error-box i {
+  font-weight: 900;
+  font-size: 23px;
+}
+
+.success-box {
+  background: var(--green);
+  border: solid 1px var(--green-light);
+  border-radius: var(--radius);
+  color: var(--green-light);
+  padding: 15px;
+  gap: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.success-box p {
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.success-box i {
+  font-weight: 900;
+  font-size: 23px;
+}
+
+.buttons a, .button {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .4s;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  background: var(--black);
+  padding: 10px;
+  border: solid 1px var(--light);
+  border-radius: var(--radius);
+}
+
+.buttons a i, .button i {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.buttons a button, .button button {
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.buttons a:hover, .button:hover {
+  color: var(--red-light);
+  border: solid 1px var(--red-light);
+}
+
+.badges a, .badge {
+  background: none;
+  border: solid 1px var(--red-light);
+  border-radius: var(--radius);
+  background: var(--red);
+  color: var(--white);
+  padding: 5px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .4s;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.badges a i, .badge i {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.badges a button, .badge button {
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.badges a:hover, .badge:hover {
+  color: var(--black);
+  background: var(--red-light);
+}
+
+.links a, .link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .4s;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.links a i, .link i {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.links a button, .link button {
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.links a:hover, .link:hover {
+  color: var(--red-light);
+}
+
+.dark-input {
+  background: var(--dark);
+  outline: none; 
+  font-size: 15px;
+  color: var(--white);
+  border: solid 1px var(--gray);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  font-weight: 300;
+  padding: 10px;
+  transition: .4s;
+}
+
+.dark-input:focus {
+  box-shadow: var(--inner-shadow);
+  border: solid 1px var(--light);
+}
+
+.dark-button {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .4s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: var(--black);
+  padding: 10px;
+  border: solid 1px var(--gray);
+  border-radius: var(--radius);
+}
+
+.dark-button i {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.dark-button p{
+  color: inherit;
+  background: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.dark-button:hover {
+  color: var(--red-light);
+  border: solid 1px var(--red-light);
+}
+
+.count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  padding: 10px;
+  border: solid 1px var(--light);
+  border-radius: var(--radius);
+}
+
+.count strong {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.invalid button, .invalid i, .invalid{
+  cursor: not-allowed;
+}
+
+.invalid:hover {
+  color: var(--white);
+}
+
+/*h1 {
+  text-shadow: var(--text-shadow);
+}
+
+input {
+  color: white;
+  outline: none;
+  padding: 10px;
+  font-size: 15px;
+  color: var(--white); 
+  border: solid 1px var(--light);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  background: var(--black3);
+}
+
+input:focus {
+  box-shadow: var(--inner-shadow);
+}
+
+select {
+  font-size: 15px;
+  padding: 10px;
+  background: var(--black3);
+  border: solid 1px var(--light);
+  outline: none;
+  color: var(--white); 
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+}
+
+button, .btn {
+  font-size: 15px;
+  padding: 10px;
+  background: var(--black3);
+  border: solid 1px var(--light);
+  outline: none;
+  color: var(--white); 
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button:hover, .btn:hover {
+  box-shadow: var(--inner-shadow);
+}
+
+.dark-box {
+  border: solid 1px var(--light);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  background: var(--black);
+}
+
+.error {
+  font-size: 15px;
+  color: var(--red-light); 
+}
+
+.error-box {
+  font-size: 15px;
+  background: var(--red); 
+  padding: 20px;
+  border-radius: var(--radius);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.success-box {
+  font-size: 15px;
+  background: var(--green); 
+  padding: 20px;
+  border-radius: var(--radius);
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.user {
+  padding: 30px 30px 30px 240px;
+  color: white;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.el {
+  padding: 20px;
+  border: solid 1px var(--light);
+  display: flex;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  background: var(--black);
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+}
+
+.el-btns {
+  margin-top: 7px;
+}
+
+.el h1 {
+  font-size: 25px;
+}*/

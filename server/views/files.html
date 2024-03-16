@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.files") }}</title>
+    <link href="/css/files.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main class="user">
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if success %}
+        {% include "parts/success.html" %}
+      {% endif %}
+      <div class="disk">
+        <div class="disk-text">
+          <label><strong>{{ get("files.used") }}:</strong> {{ h(disk.Used) }}</label>
+          <label><strong>{{ get("files.free") }}:</strong> {{ h(disk.Free) }}</label>
+        </div>
+        <div class="meter">
+          <div class="inside" style="width: {{disk.Percent}}%"></div>
+        </div>
+      </div>
+      <form action="/files" method="GET">
+        <label class="search">
+          <input class="dark-input" type="text" name="name" value="{{ name }}"
+            placeholder="{{ get('files.input') }}" autofocus>
+        </label>
+      </form>
+      {% if files|length == 0 %}
+      <div class="empty">
+        <h1>{{ get('data.empty.title') }}</h1>
+        <p>{{ get('data.empty.msg') }}</p>
+      </div>
+      {% else %}
+        <div class="count">
+          {% if current-1 > 0 %}
+            <a class="link" href="/files?name={{name}}&page={{current-1}}">
+              <i class='bx bxs-chevrons-left' ></i>
+              <button>{{ get("data.prev") }}</button>
+            </a>
+          {% else %}
+            <p class="link invalid">
+              <i class='bx bxs-chevrons-left' ></i>
+              <button>{{ get("data.prev") }}</button>
+            </p>
+          {% endif %}
+          <strong>{{current}}/{{pages}}</strong>
+          {% if current+1 <= pages %}
+            <a class="link" href="/files?name={{name}}&page={{current+1}}">
+              <button>{{ get("data.next") }}</button>
+              <i class='bx bxs-chevrons-right' ></i>
+            </a>
+          {% else %}
+            <p class="link invalid">
+              <button>{{ get("data.next") }}</button>
+              <i class='bx bxs-chevrons-right' ></i>
+            </p>
+          {% endif %}
+        </div>
+        <div class="list">
+          {% for f in files %}
+            <div class="file">
+              <h1>{{ f.Path }}</h1>
+              <div class="options">
+                <p class="badge">
+                  <i class='bx bxs-memory-card' ></i>
+                  <button><strong>{{ get("files.size") }}:</strong> {{ h(f.Size) }}</button>
+                </p>
+                <div class="buttons">
+                  <a href="/files/download?path={{ u(f.Path) }}">
+                    <i class='bx bxs-download'></i>
+                    <button>{{ get("files.download") }}</button>
+                  </a>
+                  <a href="/files/delete?path={{ u(f.Path) }}&name={{name}}">
+                    <i class='bx bxs-x-circle' ></i>
+                    <button>{{ get("files.delete") }}</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </main>
+  </body>
+</html>

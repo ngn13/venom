@@ -1,0 +1,59 @@
+main {
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  border: solid 1px var(--gray);
+  flex-grow: 1;
+}
+
+.card p {
+  font-size: 25px;
+  color: var(--light);
+}
+
+.card h1 {
+  font-size: 30px;
+  color: var(--white);
+}
+
+.dark-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.dark-table td{
+  background: var(--dark);
+}
+
+.dark-table th{
+  background: var(--dark);
+  text-align: left;
+}
+
+.dark-table a {
+  color: var(--white);
+  transition: .3s;
+}
+
+.dark-table a:hover {
+  font-weight: 900;
+  color: var(--red-light);
+}
+
+.error-box,
+.success-box{
+  margin-bottom: 15px;
+}

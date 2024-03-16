@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.build") }}</title>
+    <link href="/css/build.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main class="user">
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if success %}
+        {% include "parts/success.html" %}
+      {% endif %}
+      <div class="topbar">
+        <p>{{ get("build.warning") }}</p>
+        <a class="button" href="/build/create">
+          <i class='bx bxs-cog' ></i>
+          <button>{{ get("build.create") }}</button>
+        </a>
+      </div>
+      <div class="list">
+      {% for b in builds %}
+        {% if b.Enabled %}
+        <div class="build">
+          <h1>{{ b.Name }}</h1>
+          <table class="dark-table">
+            <tr>
+              <td>
+                <strong>🔑 {{ get("build.agent.token") }}</strong>
+              </td>
+              <td>{{ b.Token }}</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>📥 {{ get("build.agent.modules") }}</strong>
+              </td>
+              <td>
+                {% for m in b.Config.Modules %}
+                  {{ m }}
+                {% endfor %}
+              </td>
+            </tr>
+          </table>
+          <div class="status-bar">
+            {% if b.Status == "ongoing" %}
+              <div class="ongoing">
+                <p>{{ get("build.ongoing") }}</p>
+                <div class="dot-falling"></div>
+              </div>
+              <script>
+                setTimeout(()=>{
+                  location.href = "/build"
+                }, 5000)
+              </script>
+            {% elif b.Status == "failed" %}
+              <div class="failed">
+                <i class='bx bxs-error-circle'></i>
+                <p>{{ get("build.fail") }}</p>
+              </div>
+              <div class="buttons">
+                <a href="/build/remove?token={{ u(b.Token) }}">
+                  <i class='bx bxs-x-circle' ></i>
+                  <button>{{ get("build.btn.remove") }}</button>
+                </a>
+              </div>
+            {% else %}
+              <div class="done">
+                <i class='bx bxs-check-circle' ></i>
+                <p>{{ get("build.success") }}</p>
+              </div>
+              <div class="buttons">
+                <a href="/build/download?token={{ u(b.Token) }}">
+                  <i class='bx bxs-download'></i>
+                  <button>{{ get("build.btn.download") }}</button>
+                </a>
+                <a href="/build/remove?token={{ u(b.Token) }}">
+                  <i class='bx bxs-x-circle' ></i>
+                  <button>{{ get("build.btn.remove") }}</button>
+                </a>
+              </div>
+            {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </main>
+  </body>
+</html>

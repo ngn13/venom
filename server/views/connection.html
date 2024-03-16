@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "parts/head.html" %}
+    <title>venom | {{ a.Sysinfo.HWID }}</title>
+    <link href="/css/connection.css" rel="stylesheet">
+    <link href="/css/countries.css" rel="stylesheet">
+  </head>
+  <body>
+    {% include "parts/navbar.html" %}
+    <main>
+      {% if error %}
+        {% include "parts/error.html" %}
+      {% endif %}
+      {% if success %}
+        {% include "parts/success.html" %}
+      {% endif %}
+      <div class="agent">
+        <div class="header">
+          {% if a.Sysinfo.Country == "Unknown" %}
+            <h1>[?] {{ a.Sysinfo.Username }}@{{ a.Sysinfo.Hostname }}</h1>
+          {% else %}
+            <h1><div class="flag-small flag-small-{{ a.Sysinfo.Country }}"></div>{{ a.Sysinfo.Username }}@{{ a.Sysinfo.Hostname }}</h1>
+          {% endif %}
+          <div class="buttons">
+            <a href="/files?id={{ a.ID }}">
+              <i class='bx bxs-file-blank'></i>
+              <button>{{ get("home.files") }}</button>
+            </a>
+            <a href="/con/download/{{ a.ID }}">
+              <i class='bx bxs-download'></i>
+              <button>{{ get("home.download") }}</button>
+            </a>
+            <a href="/con/remove/{{ a.ID }}">
+              <i class='bx bxs-x-square' ></i>
+              <button>{{ get("home.remove") }}</button>
+            </a>
+          </div>
+        </div>
+        <table class="dark-table">
+          <tr>
+            <td><strong>⚙️  {{ get("home.agent.build") }}</strong></td> 
+            <td><p>{{ build(a).Name }} ({{ build(a).Token }})</p></td>
+          </tr>
+          <tr>
+            <td><strong>⚒️  {{ get("home.agent.hwid") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.HWID }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>📌 {{ get("home.agent.ip") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.PublicIP }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>🏢 {{ get("home.agent.isp") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.ISP }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>🕑 {{ get("home.agent.timezone") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.Timezone }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>💿 {{ get("home.agent.memory") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.Memory }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>💾 {{ get("home.agent.disk") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.Disk }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>📶 {{ get("home.agent.cpu") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.CPU }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>🖥️ {{ get("home.agent.gpu") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.GPU }}</p></td>
+          </tr>
+          <tr>
+            <td><strong>⚒️  {{ get("home.agent.os") }}</strong></td> 
+            <td><p>{{ a.Sysinfo.OS }}</p></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

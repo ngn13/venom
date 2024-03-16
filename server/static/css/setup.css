@@ -1,0 +1,82 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10%;
+}
+
+form {
+  background: var(--dark);
+  border: solid 1px var(--gray);
+  border-radius: var(--radius);
+  padding: 25px;
+}
+
+.dark-input {
+  background: var(--black);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.inputs input {
+  flex-grow: 1;
+}
+
+.inputs select {
+  background: var(--black);
+  border: solid 1px var(--gray);
+  border-radius: var(--radius);
+  color: var(--white);
+  padding: 10px;
+}
+
+.submit {
+  margin-top: 5px;
+  font-size: 15px;
+  width: 100%;
+}
+
+form h1 {
+  color: var(--white);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+form h3 {
+  color: var(--light);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.header img {
+  width: 60px;
+}
+
+.header div a {
+  margin-top: 10px;
+}
+
+.header a {
+  width: min-content;
+}
+
+.badges {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
