@@ -7,10 +7,11 @@ tool targeting x64 Windows 10/11 systems, written in Go.
 </br>
 
 > [!CAUTION]
-> This tool is designed and shared only for educational and 
-> research purposes. I do not support or promote any kind of illegal or 
-> unethical use of this tool. If you are crimminal and you want to use this tool 
-> for illegal or unethical purposes, please fuck off.
+> This software is designed and shared only for educational and 
+> research purposes. It's is provided without warranty and the
+> distribution platform or the developers of the software are not
+> responsible for any material, moral or legal damage that may occur
+> due to incorrect or unethical use of the software.
 
 ---
 
