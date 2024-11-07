@@ -56,8 +56,4 @@ If you are having any problems then [create an issue](https://github.com/ngn13/e
 ## ❤️ Contribute
 If like this project, then please consider contributing! You can do so by
 adding new features, fixing bugs, [adding translations](docs/translate.md) or by 
-just leaving a star! You can also support contributers/developers by donating:
-
-| Contributer                     | Monero (XMR) Address                                                                            |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [ngn](https://github.com/ngn13) | 46q7G7u7cmASvJm7AmrhmNg6ctS77mYMmDAy1QxpDn5w57xV3GUY5za4ZPZHAjqaXdfS5YRWm4AVj5UArLDA1retRkJp47F |
+just leaving a star!
