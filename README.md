@@ -30,7 +30,10 @@ tool targeting x64 Windows 10/11 systems, written in Go.
 - Steal files from the disk
 - Display fake error message to trick the user
 - Fairly small build sizes (~4MB)
-- Multi-language support (🇬🇧 English and 🇹🇷 Turkish)
+- Multi-language support
+  * 🇬🇧 English
+  * 🇹🇷 Turkish
+  * 🇸🇦 Arabic (thanks to [R3dbust3R](https://github.com/R3dbust3R))
 
 ## 🚀 Setup 
 For a minimal setup, the server requirements are:
